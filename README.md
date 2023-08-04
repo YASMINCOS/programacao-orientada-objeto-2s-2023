@@ -1,1 +1,11 @@
-# programacao-orientada-objeto-2s-2023
+# PROGRAMAÇÃO ORIENTADA A OBJETO
+Repositório dedicado as aulas de programação orietada a objetos
+# LISTA 01
+- OBJETIVO:
+- TEMAS ABORDADOS:
+# LISTA 02
+- OBJETIVO:
+- TEMAS ABORDADOS:
+# LISTA 03
+- OBJETIVO:
+- TEMAS ABORDADOS:
