@@ -5,7 +5,7 @@ Repositório dedicado as aulas de programação orietada a objetos
 - TEMAS ABORDADOS: Classe e objeto, introdução a Programação orientada.
 # LISTA 02
 - OBJETIVO:
-- TEMAS ABORDADOS: Encapsulamento.
+- TEMAS ABORDADOS: Encapsulamento, Herança.
 # LISTA 03
 - OBJETIVO:
 - TEMAS ABORDADOS:
