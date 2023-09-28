@@ -8,10 +8,10 @@ public class verificaNumeroPrimo {
         int numero = scanner.nextInt();
         scanner.close();
         
-        verificaNumeroPrimo(numero);
+        verificarNumeroPrimo(numero);
     }
 
-    private static void verificaNumeroPrimo(int n) {
+    private static void verificarNumeroPrimo(int n) {
         boolean isPrime = true; 
 
         if (n <= 1) {

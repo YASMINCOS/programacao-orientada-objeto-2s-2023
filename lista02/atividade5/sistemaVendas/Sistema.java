@@ -2,14 +2,14 @@ package atividade5.sistemaVendas;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import atividade5.sistemaVendas.controleClientes.Cliente;
 
 public class Sistema {
 
-    private List<Produto> produtos;
+    private static List<Produto> produtos;
     private List<Cliente> clientes;
     private List<Compra> compras;
+    //private static Produto[] listaDeProdutos;
 
     public Sistema() {
         produtos = new ArrayList<>();
@@ -25,10 +25,10 @@ public class Sistema {
         produtos.remove(produto);
     }
 
-    public List<Produto> listarProdutos() {
+     public List<Produto> listarProdutos() {
         return produtos;
     }
-
+    
     public Produto buscarProdutoPorNome(String nome) {
         for (Produto produto : produtos) {
             if (produto.getNome().equalsIgnoreCase(nome)) {
