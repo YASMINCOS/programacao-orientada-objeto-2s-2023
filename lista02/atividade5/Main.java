@@ -1,6 +1,6 @@
 package atividade5;
 
-import atividade5.sistemaVendas.CarrinhoDeCompras;
+import atividade5.sistemaVendas.Carrinho;
 import atividade5.sistemaVendas.Produto;
 import atividade5.sistemaVendas.Sistema;
 import atividade5.sistemaVendas.controleClientes.Cliente;
@@ -12,7 +12,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args, CarrinhoDeCompras carrinho) {
+    public static void main(String args[]) {
+        
         Scanner scanner = new Scanner(System.in);
         Cliente cliente = new Cliente();
         Sistema sistema = new Sistema();
@@ -34,24 +35,25 @@ public class Main {
         sistema.adicionarProduto(utilitario2);
 
         System.out.println("MERCADINHO\n");
+        System.out.println("Faça seu cadastro\n");
 
         // Cadastro
         System.out.println("Cliente");
         // Pessoa >>> Cliente
-        System.out.print("        Nome: ");
+        System.out.print("Digite seu nome: ");
         cliente.setNome(scanner.nextLine());
-        System.out.print("      E-mail: ");
+        System.out.print("Insira seu e-Mail: ");
         cliente.setEmail(scanner.nextLine());
-        System.out.print("         CPF: ");
+        System.out.print("Digite seu CPF: ");
         cliente.setCpf(scanner.nextInt());
         scanner.nextLine();
         // Cliente
-        System.out.print("    Telefone: ");
+        System.out.print("Telefone para contato: ");
         cliente.setTelefone(scanner.nextLine());
-        System.out.print("    Endereço: ");
+        System.out.print("Insira seu Endereço: ");
         cliente.setTelefone(scanner.nextLine());
 
-        while (opcao != 4) { // Adicione opções de menu e ajuste a condição de saída conforme necessário
+        while (opcao != 4) { 
             System.out.println("Opções:");
             System.out.println("1. Listar Produtos Disponíveis");
             System.out.println("2. Selecionar Produto e Quantidade");
@@ -74,7 +76,7 @@ public class Main {
                     for (Produto produto : sistema.listarProdutos()) {
                         System.out.println("Nome: " + produto.getNome());
                         System.out.println("Preço: " + produto.getPreco());
-                        System.out.println(); // Adicione uma linha em branco para separar os produtos
+                        System.out.println(); 
                     }
                     break;
                 case 2:

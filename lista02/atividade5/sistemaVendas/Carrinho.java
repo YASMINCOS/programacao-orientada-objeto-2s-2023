@@ -3,11 +3,11 @@ package atividade5.sistemaVendas;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarrinhoDeCompras {
+public class Carrinho {
     private List<Produto> produtos;
     private List<Integer> quantidades;
 
-    public CarrinhoDeCompras() {
+    public Carrinho() {
         produtos = new ArrayList<>();
         quantidades = new ArrayList<>();
     }
