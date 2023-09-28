@@ -106,9 +106,9 @@ public class Main {
 
                 case 3:
                     // Mostrar o carrinho e os valores
-                    List<Produto> produtosNoCarrinho = carrinho.getProdutos();
-                    List<Integer> quantidadesNoCarrinho = carrinho.getQuantidades();
-                    double totalCompra = carrinho.calcularTotal();
+                    List<Produto> produtosNoCarrinho = Carrinho.getProdutos();
+                    List<Integer> quantidadesNoCarrinho = Carrinho.getQuantidades();
+                    double totalCompra = Carrinho.calcularTotal();
 
                     System.out.println("Carrinho de Compras:");
                     for (int i = 0; i < produtosNoCarrinho.size(); i++) {
