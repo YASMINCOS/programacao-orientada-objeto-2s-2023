@@ -34,25 +34,23 @@ public class Main {
         sistema.adicionarProduto(utilitario2);
 
         System.out.println("MERCADINHO\n");
-        /*
-         * 3
-         * 
-         * // Cadastro
-         * System.out.println("Cliente");
-         * // Pessoa >>> Cliente
-         * System.out.print("        Nome: ");
-         * cliente.setNome(scanner.nextLine());
-         * System.out.print("      E-mail: ");
-         * cliente.setEmail(scanner.nextLine());
-         * System.out.print("         CPF: ");
-         * cliente.setCpf(scanner.nextInt());
-         * scanner.nextLine();
-         * // Cliente
-         * System.out.print("    Telefone: ");
-         * cliente.setTelefone(scanner.nextLine());
-         * System.out.print("    Endereço: ");
-         * cliente.setTelefone(scanner.nextLine());
-         */
+
+        // Cadastro
+        System.out.println("Cliente");
+        // Pessoa >>> Cliente
+        System.out.print("        Nome: ");
+        cliente.setNome(scanner.nextLine());
+        System.out.print("      E-mail: ");
+        cliente.setEmail(scanner.nextLine());
+        System.out.print("         CPF: ");
+        cliente.setCpf(scanner.nextInt());
+        scanner.nextLine();
+        // Cliente
+        System.out.print("    Telefone: ");
+        cliente.setTelefone(scanner.nextLine());
+        System.out.print("    Endereço: ");
+        cliente.setTelefone(scanner.nextLine());
+
         while (opcao != 4) { // Adicione opções de menu e ajuste a condição de saída conforme necessário
             System.out.println("Opções:");
             System.out.println("1. Listar Produtos Disponíveis");
