@@ -1,16 +1,18 @@
 package atividade5.sistemaVendas.controleClientes;
 
+import java.math.BigInteger;
+
 public class Pessoa {
 
     protected String nome;
-    protected Integer cpf;
+    protected BigInteger cpf;
     protected String email;
 
     public Pessoa(){
 
     }
 
-    public Pessoa(String nome, Integer cpf, String email){
+    public Pessoa(String nome, BigInteger cpf, String email){
         setNome(nome);
         setCpf(cpf);
         setEmail(email);
@@ -24,11 +26,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Integer getCpf() {
+    public BigInteger getCpf() {
         return this.cpf;
     }
 
-    public void setCpf(Integer cpf) {
+    public void setCpf(BigInteger cpf) {
         this.cpf = cpf;
     }
 

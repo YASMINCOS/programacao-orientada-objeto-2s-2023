@@ -1,5 +1,7 @@
 package atividade5.sistemaVendas.controleClientes;
 
+import java.math.BigInteger;
+
 public class Cliente extends Pessoa {
     private String telefone;
     private String endereco;
@@ -7,7 +9,7 @@ public class Cliente extends Pessoa {
     public Cliente() {
     }
 
-    public Cliente(String nome, Integer cpf, String email, String telefone, String endereco) {
+    public Cliente(String nome, BigInteger cpf, String email, String telefone, String endereco) {
         super(nome, cpf, email);
         this.telefone = telefone;
         this.endereco = endereco;
@@ -32,8 +34,8 @@ public class Cliente extends Pessoa {
     public String formatarTelefone() {
         if (telefone != null && telefone.length() == 10) {
             String formattedTelefone = "(" + telefone.substring(0, 2) + ") " +
-                                       telefone.substring(2, 6) + "-" +
-                                       telefone.substring(6, 10);
+                    telefone.substring(2, 6) + "-" +
+                    telefone.substring(6, 10);
             return formattedTelefone;
         } else {
             return "Telefone inválido";
@@ -43,6 +45,6 @@ public class Cliente extends Pessoa {
     @Override
     public String toString() {
         return "Nome: " + getNome() + "\nCPF: " + getCpf() + "\nEmail: " + getEmail() +
-               "\nTelefone: " + formatarTelefone() + "\nEndereço: " + endereco;
+                "\nTelefone: " + formatarTelefone() + "\nEndereço: " + endereco;
     }
 }
