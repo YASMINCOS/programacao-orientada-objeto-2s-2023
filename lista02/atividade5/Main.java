@@ -148,7 +148,7 @@ public class Main {
 
         double totalCompra = carrinho.calcularTotal();
         System.out.println("Compra finalizada. Obrigado, " + cliente.getNome() + "!");
-        System.out.println("Valor Total da Compra: " + totalCompra);
+        System.out.println("Valor Total da Compra: " + String.format("%.2f", totalCompra));
 
         scanner.close();
     }
