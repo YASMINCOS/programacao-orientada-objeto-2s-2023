@@ -55,7 +55,7 @@ public class Main {
         System.out.print("Insira seu Endereço: ");
         cliente.setEndereco(scanner.nextLine());
 
-        while (opcao != 3) {
+        while (opcao != 4) {
             System.out.println();
             System.out.println("Opções:");
             System.out.println("1. Selecionar Produto e Quantidade");
