@@ -19,11 +19,12 @@ public class Main {
         CarrinhoDeCompras carrinho = new CarrinhoDeCompras(); // Crie um carrinho para o cliente
         int opcao = 0;
 
-        // Criação e inicialização de 2 produtos de cada tipo
+        // Criação e inicialização de produtos de cada tipo
         Eletronico eletronico1 = new Eletronico("uPhone", 999.99, "Orange", "BR");
         Eletronico eletronico2 = new Eletronico("Notebook Top", 3999.90, "Arte", "BSB");
-        Livros livro1 = new Livros("Como Tocar o Sol?", 49.99, "Clark Quente", "29092023", "Alien");
-        Livros livro2 = new Livros("Mistérios do JAVA", 99.99, "[Unknown]", "21122012", "JJ");
+        Livros livro1 = new Livros("Como Tocar o Sol?", 49.99, "Clark Quente", "29/09/2023", "Alien");
+        Livros livro2 = new Livros("Mistérios do JAVA", 99.99, "[Unknown]", "21/12/2012", "JJ");
+        Livros livro3 = new Livros("O Curso", 49.99, "Albert Einstein", "14/03/1879", "??");
         Utilitarios utilitario1 = new Utilitarios("SuperWinRAR", 129.49, "Compactador e Descompactador de arquivos");
         Utilitarios utilitario2 = new Utilitarios("VadeRetro", 289.90, "Antivírus");
 
@@ -31,6 +32,7 @@ public class Main {
         sistema.adicionarProduto(eletronico2);
         sistema.adicionarProduto(livro1);
         sistema.adicionarProduto(livro2);
+        sistema.adicionarProduto(livro3);
         sistema.adicionarProduto(utilitario1);
         sistema.adicionarProduto(utilitario2);
 
@@ -45,7 +47,7 @@ public class Main {
         System.out.print("Insira seu e-Mail: ");
         cliente.setEmail(scanner.nextLine());
         System.out.print("Digite seu CPF: ");
-        cliente.setCpf(scanner.nextInt());
+        cliente.setCpf(scanner.nextBigInteger());
         scanner.nextLine();
         // Cliente
         System.out.print("Telefone para contato: ");
@@ -58,7 +60,8 @@ public class Main {
             System.out.println("Opções:");
             System.out.println("1. Selecionar Produto e Quantidade");
             System.out.println("2. Ver Carrinho");
-            System.out.println("3. Sair");
+            System.out.println("3. Informações dos produtos no carrinho");
+            System.out.println("4. Sair");
             System.out.print("Selecione uma opção: ");
 
             try {
@@ -68,11 +71,12 @@ public class Main {
                 scanner.nextLine();
                 continue;
             }
-            
+
             System.out.println();
 
             switch (opcao) {
                 case 1:
+                    // Adicionar produtos no carrinho
                     System.out.println("Selecione um produto pelo número:");
 
                     List<Produto> produtosDisponiveis = sistema.listarProdutos();
@@ -112,14 +116,28 @@ public class Main {
                             Produto produto = produtosNoCarrinho.get(i);
                             int quantidade = quantidadesNoCarrinho.get(i);
                             System.out.println("Produto: " + produto.getNome() + " - Quantidade: " + quantidade);
-                        }
 
-                        double totalCompra = carrinho.calcularTotal();
                         }
-                    
+                        double totalCompra = carrinho.calcularTotal();
+                        System.out.println("Total: " + totalCompra);
+                    }
+
                     break;
 
                 case 3:
+                    List<Produto> prodNoCarrinho = carrinho.getProdutos();
+
+                    if (prodNoCarrinho.isEmpty()) {
+                        System.out.println("Selecione algum produto para mostrar suas informações.");
+                    } else {
+                        for (int i = 0; i < prodNoCarrinho.size(); i++) {
+                            System.out.println(prodNoCarrinho.get(i) + "\n");
+                        }
+                    }
+
+                    break;
+
+                case 4:
                     System.out.println("Saindo...");
                     break;
                 default:
@@ -130,8 +148,7 @@ public class Main {
 
         double totalCompra = carrinho.calcularTotal();
         System.out.println("Compra finalizada. Obrigado, " + cliente.getNome() + "!");
-        System.out.println("Valor Total da Compra: " + totalCompra);                     
-
+        System.out.println("Valor Total da Compra: " + totalCompra);
 
         scanner.close();
     }
