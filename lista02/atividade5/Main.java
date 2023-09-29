@@ -60,7 +60,6 @@ public class Main {
             System.out.println("2. Ver Carrinho");
             System.out.println("3. Sair");
             System.out.print("Selecione uma opção: ");
-            System.out.println();
 
             try {
                 opcao = scanner.nextInt();
@@ -69,6 +68,10 @@ public class Main {
                 scanner.nextLine();
                 continue;
             }
+            
+            System.out.println();
+
+            boolean continuarComprando = true; 
 
             switch (opcao) {
                 case 1:
@@ -88,6 +91,7 @@ public class Main {
 
                         System.out.print("Digite a quantidade desejada: ");
                         int quantidade = scanner.nextInt();
+                        System.out.println();
 
                         carrinho.adicionarProduto(produtoSelecionado, quantidade);
                         System.out.println("Produto adicionado ao carrinho.");
@@ -113,7 +117,12 @@ public class Main {
                         }
 
                         double totalCompra = carrinho.calcularTotal();
-                        System.out.println("Total da Compra: " + totalCompra);
+                        
+                        System.out.print("Deseja continuar comprando? (1 - Sim, 2 - Não): ");
+                        int resposta = scanner.nextInt();
+                        if (resposta == 2) {
+                            continuarComprando = false;
+                        }
                     }
                     break;
 
@@ -125,7 +134,10 @@ public class Main {
             }
 
         }
+
+        double totalCompra = carrinho.calcularTotal();
         System.out.println("Compra finalizada. Obrigado, " + cliente.getNome() + "!");
+        System.out.println("Valor Total da Compra: " + totalCompra);                     
 
 
         scanner.close();
