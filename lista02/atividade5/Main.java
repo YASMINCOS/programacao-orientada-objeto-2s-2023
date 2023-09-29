@@ -53,7 +53,7 @@ public class Main {
         System.out.print("Insira seu Endereço: ");
         cliente.setEndereco(scanner.nextLine());
 
-        while (opcao != 4) {
+        while (opcao != 3) {
             System.out.println();
             System.out.println("Opções:");
             System.out.println("1. Selecionar Produto e Quantidade");
@@ -123,7 +123,10 @@ public class Main {
                 default:
                     System.out.println("Opção inválida. Por favor, selecione uma opção válida.");
             }
+
         }
+        System.out.println("Compra finalizada. Obrigado, " + cliente.getNome() + "!");
+
 
         scanner.close();
     }
