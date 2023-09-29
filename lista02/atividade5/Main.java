@@ -71,8 +71,6 @@ public class Main {
             
             System.out.println();
 
-            boolean continuarComprando = true; 
-
             switch (opcao) {
                 case 1:
                     System.out.println("Selecione um produto pelo número:");
@@ -117,13 +115,8 @@ public class Main {
                         }
 
                         double totalCompra = carrinho.calcularTotal();
-                        
-                        System.out.print("Deseja continuar comprando? (1 - Sim, 2 - Não): ");
-                        int resposta = scanner.nextInt();
-                        if (resposta == 2) {
-                            continuarComprando = false;
                         }
-                    }
+                    
                     break;
 
                 case 3:
