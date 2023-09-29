@@ -3,11 +3,11 @@ package atividade5.sistemaVendas;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Carrinho {
+public class CarrinhoDeCompras {
     private static List<Produto> produtos;
     private static List<Integer> quantidades;
 
-    public Carrinho() {
+    public CarrinhoDeCompras() {
         produtos = new ArrayList<>();
         quantidades = new ArrayList<>();
     }
@@ -38,5 +38,13 @@ public class Carrinho {
             total += produto.getPreco() * quantidade;
         }
         return total;
+    }
+
+    public List<Integer> getQuantidadesNoCarrinho() {
+        return null;
+    }
+
+    public List<Produto> getProdutosNoCarrinho() {
+        return null;
     }
 }

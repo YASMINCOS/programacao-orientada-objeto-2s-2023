@@ -1,11 +1,10 @@
 package atividade5;
 
-import atividade5.sistemaVendas.Carrinho;
+import atividade5.sistemaVendas.CarrinhoDeCompras;
 import atividade5.sistemaVendas.Produto;
 import atividade5.sistemaVendas.Sistema;
 import atividade5.sistemaVendas.controleClientes.Cliente;
 import atividade5.sistemaVendas.tiposProdutos.*;
-
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -13,10 +12,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String args[]) {
-        
+
         Scanner scanner = new Scanner(System.in);
         Cliente cliente = new Cliente();
         Sistema sistema = new Sistema();
+        CarrinhoDeCompras carrinho = new CarrinhoDeCompras(); // Crie um carrinho para o cliente
         int opcao = 0;
 
         // Criação e inicialização de 2 produtos de cada tipo
@@ -51,9 +51,9 @@ public class Main {
         System.out.print("Telefone para contato: ");
         cliente.setTelefone(scanner.nextLine());
         System.out.print("Insira seu Endereço: ");
-        cliente.setTelefone(scanner.nextLine());
+        cliente.setEndereco(scanner.nextLine());
 
-        while (opcao != 4) { 
+        while (opcao != 4) {
             System.out.println("Opções:");
             System.out.println("1. Listar Produtos Disponíveis");
             System.out.println("2. Selecionar Produto e Quantidade");
@@ -74,9 +74,10 @@ public class Main {
                     // Listar produtos disponíveis
                     System.out.println("Lista de Produtos Disponíveis:");
                     for (Produto produto : sistema.listarProdutos()) {
+                        System.out.println();
                         System.out.println("Nome: " + produto.getNome());
                         System.out.println("Preço: " + produto.getPreco());
-                        System.out.println(); 
+                        System.out.println();
                     }
                     break;
                 case 2:
@@ -97,6 +98,7 @@ public class Main {
                         System.out.print("Digite a quantidade desejada: ");
                         int quantidade = scanner.nextInt();
 
+                        carrinho.adicionarProduto(produtoSelecionado, quantidade);
                         System.out.println("Produto adicionado ao carrinho.");
                     } else {
                         System.out.println("Número de produto inválido.");
@@ -106,21 +108,24 @@ public class Main {
 
                 case 3:
                     // Mostrar o carrinho e os valores
-                    List<Produto> produtosNoCarrinho = Carrinho.getProdutos();
-                    List<Integer> quantidadesNoCarrinho = Carrinho.getQuantidades();
-                    double totalCompra = Carrinho.calcularTotal();
+                    List<Produto> produtosNoCarrinho = carrinho.getProdutos();
+                    List<Integer> quantidadesNoCarrinho = carrinho.getQuantidades();
 
-                    System.out.println("Carrinho de Compras:");
-                    for (int i = 0; i < produtosNoCarrinho.size(); i++) {
-                        Produto produto = produtosNoCarrinho.get(i);
-                        int quantidade = quantidadesNoCarrinho.get(i);
-                        System.out.println("Produto: " + produto.getNome() + " - Quantidade: " + quantidade);
+                    if (produtosNoCarrinho.isEmpty()) {
+                        System.out.println("Seu carrinho está vazio.");
+                    } else {
+                        System.out.println("Carrinho de Compras:");
+                        for (int i = 0; i < produtosNoCarrinho.size(); i++) {
+                            Produto produto = produtosNoCarrinho.get(i);
+                            int quantidade = quantidadesNoCarrinho.get(i);
+                            System.out.println("Produto: " + produto.getNome() + " - Quantidade: " + quantidade);
+                        }
+
+                        double totalCompra = carrinho.calcularTotal();
+                        System.out.println("Total da Compra: " + totalCompra);
                     }
-
-                    System.out.println("Total da Compra: " + totalCompra);
                     break;
 
-                //
                 case 4:
                     System.out.println("Saindo...");
                     break;
