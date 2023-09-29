@@ -44,21 +44,23 @@ public class Livros extends Produto {
         this.editora = editora;
     }
 
-    public String formatarData() {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
-            Date data = sdf.parse(this.dataPublicacao); 
-            SimpleDateFormat novoSdf = new SimpleDateFormat("zz-zz-zzzz"); 
-            return novoSdf.format(data); 
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return "Data inválida"; 
-        }
-    }
+    // public String formatarData() {
+    //     try {
+    //         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
+    //         Date data = sdf.parse(this.dataPublicacao); 
+    //         SimpleDateFormat novoSdf = new SimpleDateFormat("zz-zz-zzzz"); 
+    //         return novoSdf.format(data); 
+    //     } catch (ParseException e) {
+    //         e.printStackTrace();
+    //         return "Data inválida"; 
+    //     }
+    // }
+
+
 
     @Override
     public String toString() {
         return "Nome: " + getNome() + "\nPreço: " + getPreco() + "\nAutor: " + autor +
-               "\nData de Publicação: " + formatarData() + "\nEditora: " + editora;
+               "\nData de Publicação: " + getDataPublicacao() + "\nEditora: " + editora;
     }
 }
