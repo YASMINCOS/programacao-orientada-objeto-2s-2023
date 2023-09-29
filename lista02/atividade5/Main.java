@@ -38,7 +38,7 @@ public class Main {
         System.out.println("Faça seu cadastro\n");
 
         // Cadastro
-        System.out.println("Cliente");
+        System.out.println("-------Cliente-------");
         // Pessoa >>> Cliente
         System.out.print("Digite seu nome: ");
         cliente.setNome(scanner.nextLine());
@@ -54,12 +54,14 @@ public class Main {
         cliente.setEndereco(scanner.nextLine());
 
         while (opcao != 4) {
+            System.out.println();
             System.out.println("Opções:");
             System.out.println("1. Listar Produtos Disponíveis");
             System.out.println("2. Selecionar Produto e Quantidade");
             System.out.println("3. Ver Carrinho");
             System.out.println("4. Sair");
             System.out.print("Selecione uma opção: ");
+            System.out.println();
 
             try {
                 opcao = scanner.nextInt();
