@@ -56,10 +56,9 @@ public class Main {
         while (opcao != 4) {
             System.out.println();
             System.out.println("Opções:");
-            System.out.println("1. Listar Produtos Disponíveis");
-            System.out.println("2. Selecionar Produto e Quantidade");
-            System.out.println("3. Ver Carrinho");
-            System.out.println("4. Sair");
+            System.out.println("1. Selecionar Produto e Quantidade");
+            System.out.println("2. Ver Carrinho");
+            System.out.println("3. Sair");
             System.out.print("Selecione uma opção: ");
             System.out.println();
 
@@ -73,16 +72,6 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    // Listar produtos disponíveis
-                    System.out.println("Lista de Produtos Disponíveis:");
-                    for (Produto produto : sistema.listarProdutos()) {
-                        System.out.println();
-                        System.out.println("Nome: " + produto.getNome());
-                        System.out.println("Preço: " + produto.getPreco());
-                        System.out.println();
-                    }
-                    break;
-                case 2:
                     System.out.println("Selecione um produto pelo número:");
 
                     List<Produto> produtosDisponiveis = sistema.listarProdutos();
@@ -108,7 +97,7 @@ public class Main {
 
                     break;
 
-                case 3:
+                case 2:
                     // Mostrar o carrinho e os valores
                     List<Produto> produtosNoCarrinho = carrinho.getProdutos();
                     List<Integer> quantidadesNoCarrinho = carrinho.getQuantidades();
@@ -128,7 +117,7 @@ public class Main {
                     }
                     break;
 
-                case 4:
+                case 3:
                     System.out.println("Saindo...");
                     break;
                 default:
