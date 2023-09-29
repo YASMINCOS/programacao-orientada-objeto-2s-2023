@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarrinhoDeCompras {
-    private static List<Produto> produtos;
-    private static List<Integer> quantidades;
+    private List<Produto> produtos;
+    private List<Integer> quantidades;
 
     public CarrinhoDeCompras() {
         produtos = new ArrayList<>();
@@ -22,15 +22,15 @@ public class CarrinhoDeCompras {
         quantidades.remove(indice);
     }
 
-    public static List<Produto> getProdutos() {
+    public List<Produto> getProdutos() {
         return produtos;
     }
 
-    public static List<Integer> getQuantidades() {
+    public List<Integer> getQuantidades() {
         return quantidades;
     }
 
-    public static double calcularTotal() {
+    public double calcularTotal() {
         double total = 0.0;
         for (int i = 0; i < produtos.size(); i++) {
             Produto produto = produtos.get(i);
