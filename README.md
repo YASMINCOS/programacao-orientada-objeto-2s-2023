@@ -9,3 +9,6 @@ Repositório dedicado as aulas de programação orietada a objetos
 # LISTA 03
 - OBJETIVO:
 - TEMAS ABORDADOS:
+
+
+criar projeto maven:mvn archetype:generate -DgroupId=br.ucb.poo -DartifactId=atividade9 -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
